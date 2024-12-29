@@ -49,21 +49,13 @@ def trade(host, line):
     data = client.get_prices(
         params=[
             BookParams(
-                token_id="25788984364015292223605977307142748201985724991469784186655292374059222006895",
+                token_id="45714870634090908403813747458214625542376052548606303175331201110938821302832",
                 side="BUY",
             ),
             BookParams(
-                token_id="25788984364015292223605977307142748201985724991469784186655292374059222006895",
+                token_id="45714870634090908403813747458214625542376052548606303175331201110938821302832",
                 side="SELL",
             ),
-            # BookParams(
-            #     token_id="45714870634090908403813747458214625542376052548606303175331201110938821302832",
-            #     side="BUY",
-            # ),
-            # BookParams(
-            #     token_id="45714870634090908403813747458214625542376052548606303175331201110938821302832",
-            #     side="SELL",
-            # ),
         ]
     )
     # 随机选择一个key
@@ -77,7 +69,7 @@ def trade(host, line):
     print(f"Random key: {random_key}")
     print(f"BUY as float: {buy_float}")
     print(f"SELL as float: {sell_float}")
-    for i in range(1):
+    for i in range(55):
         try:
             time.sleep(random.uniform(5, 10))
 
@@ -91,7 +83,7 @@ def trade(host, line):
             )
 
             # buyOrder(buy_float, client, collateral, random_key)
-            # buyPercentOrder(buy_float, client, collateral, random_key)
+            buyPercentOrder(buy_float, client, collateral, random_key)
 
             sellOrder(client, random_key, sell_float)
 
